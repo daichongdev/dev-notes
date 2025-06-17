@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "DevNotes",
+    "version": "1.0.0",
+    "description": "DevNotes 是一个专为开发者设计的代码笔记管理工具，帮助您将代码片段、学习笔记和技术文档;直接保存到GitHub仓库中，实现代码知识的版本化管理和云端同步。",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://api.github.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "DevNotes",
+        "default_icon": {
+            "16": "128.png",
+            "48": "128.png",
+            "128": "128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "128.png",
+        "48": "128.png",
+        "128": "128.png"
+    }
+}
